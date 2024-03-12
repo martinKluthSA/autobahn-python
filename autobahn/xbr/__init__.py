@@ -101,10 +101,10 @@ try:
         eth_abi.process_type = process_type
 
     # monkey patch web3 for master branch / upcoming v6 (which we need for python 3.11)
-    # AttributeError: type object 'Web3' has no attribute 'toChecksumAddress'. Did you mean: 'to_checksum_address'?
+    # AttributeError: type object 'Web3' has no attribute 'to_checksum_address'. Did you mean: 'to_checksum_address'?
     import web3
-    if not hasattr(web3.Web3, 'toChecksumAddress') and hasattr(web3.Web3, 'to_checksum_address'):
-        web3.Web3.toChecksumAddress = web3.Web3.to_checksum_address
+    if not hasattr(web3.Web3, 'to_checksum_address') and hasattr(web3.Web3, 'to_checksum_address'):
+        web3.Web3.to_checksum_address = web3.Web3.to_checksum_address
     if not hasattr(web3.Web3, 'isChecksumAddress') and hasattr(web3.Web3, 'is_checksum_address'):
         web3.Web3.isChecksumAddress = web3.Web3.is_checksum_address
     if not hasattr(web3.Web3, 'isConnected') and hasattr(web3.Web3, 'is_connected'):

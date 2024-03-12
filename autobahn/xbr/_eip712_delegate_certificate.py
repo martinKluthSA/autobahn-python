@@ -280,8 +280,8 @@ class EIP712DelegateCertificate(EIP712Certificate):
                                                  bootedAt=self.bootedAt,
                                                  meta=self.meta)
         if not binary:
-            obj['message']['verifyingContract'] = web3.Web3.toChecksumAddress(obj['message']['verifyingContract']) if obj['message']['verifyingContract'] else None
-            obj['message']['delegate'] = web3.Web3.toChecksumAddress(obj['message']['delegate']) if obj['message']['delegate'] else None
+            obj['message']['verifyingContract'] = web3.Web3.to_checksum_address(obj['message']['verifyingContract']) if obj['message']['verifyingContract'] else None
+            obj['message']['delegate'] = web3.Web3.to_checksum_address(obj['message']['delegate']) if obj['message']['delegate'] else None
             obj['message']['csPubKey'] = b2a_hex(obj['message']['csPubKey']).decode() if obj['message']['csPubKey'] else None
         return obj
 

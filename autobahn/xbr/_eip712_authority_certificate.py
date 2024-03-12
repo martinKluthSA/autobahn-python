@@ -306,10 +306,10 @@ class EIP712AuthorityCertificate(EIP712Certificate):
                                                   capabilities=self.capabilities,
                                                   meta=self.meta)
         if not binary:
-            obj['message']['verifyingContract'] = web3.Web3.toChecksumAddress(obj['message']['verifyingContract']) if obj['message']['verifyingContract'] else None
-            obj['message']['issuer'] = web3.Web3.toChecksumAddress(obj['message']['issuer']) if obj['message']['issuer'] else None
-            obj['message']['subject'] = web3.Web3.toChecksumAddress(obj['message']['subject']) if obj['message']['subject'] else None
-            obj['message']['realm'] = web3.Web3.toChecksumAddress(obj['message']['realm']) if obj['message']['realm'] else None
+            obj['message']['verifyingContract'] = web3.Web3.to_checksum_address(obj['message']['verifyingContract']) if obj['message']['verifyingContract'] else None
+            obj['message']['issuer'] = web3.Web3.to_checksum_address(obj['message']['issuer']) if obj['message']['issuer'] else None
+            obj['message']['subject'] = web3.Web3.to_checksum_address(obj['message']['subject']) if obj['message']['subject'] else None
+            obj['message']['realm'] = web3.Web3.to_checksum_address(obj['message']['realm']) if obj['message']['realm'] else None
         return obj
 
     @staticmethod

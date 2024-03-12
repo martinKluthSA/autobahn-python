@@ -362,7 +362,7 @@ class FederatedRealm(object):
         '_meta',
     )
     # FIXME
-    CONTRACT_ADDRESS = web3.Web3.toChecksumAddress('0xF7acf1C4CB4a9550B8969576573C2688B48988C2')
+    CONTRACT_ADDRESS = web3.Web3.to_checksum_address('0xF7acf1C4CB4a9550B8969576573C2688B48988C2')
     CONTRACT_ABI: str = ''
 
     def __init__(self, name_or_address: str, gateway_config: Optional[Dict[str, Any]] = None):
@@ -458,7 +458,7 @@ class FederatedRealm(object):
                 name = self._name_or_address
             self._address = self._ens.address(name)
         elif self._name_category == 'eth':
-            self._address = self._w3.toChecksumAddress(self._name_or_address)
+            self._address = self._w3.to_checksum_address(self._name_or_address)
         else:
             assert False, 'should not arrive here'
 
